@@ -1,0 +1,134 @@
+.confetti-demo {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+    border: 1px solid rgba(201, 169, 98, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.confetti-demo__title {
+    font-size: 1.5rem;
+    color: #c9a962;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.confetti-demo__subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.confetti-demo__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.confetti-btn {
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    background: linear-gradient(135deg, #374151, #1f2937);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.confetti-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.confetti-btn:active {
+    transform: translateY(0);
+}
+
+/* 기본 효과 버튼 스타일 */
+.confetti-btn--basic {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.confetti-btn--celebration {
+    background: linear-gradient(135deg, #c9a962, #b8963e);
+}
+
+.confetti-btn--snow {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+}
+
+.confetti-btn--stars {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1f2937;
+}
+
+.confetti-btn--hearts {
+    background: linear-gradient(135deg, #f472b6, #ec4899);
+}
+
+/* 도메인별 버튼 */
+.confetti-demo__domains {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+}
+
+.confetti-demo__domain-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.confetti-demo__domain-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.confetti-btn--executing {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.confetti-btn--influencing {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #1f2937;
+}
+
+.confetti-btn--relationship {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.confetti-btn--strategic {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+/* 상태 메시지 */
+.confetti-demo__status {
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.confetti-demo__status strong {
+    color: #c9a962;
+}
+
+/* 반응형 */
+@media (max-width: 480px) {
+    .confetti-demo {
+        padding: 1.5rem 1rem;
+        margin: 1rem;
+    }
+
+    .confetti-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+    }
+}

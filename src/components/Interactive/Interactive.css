@@ -1,0 +1,95 @@
+.interactive-section {
+    padding: 5rem 2rem;
+    background: linear-gradient(180deg, #0d0d14 0%, #1a1a2e 50%, #0d0d14 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.interactive-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.5), transparent);
+}
+
+.interactive-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(201, 169, 98, 0.2), rgba(201, 169, 98, 0.1));
+    color: #c9a962;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(201, 169, 98, 0.3);
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: white;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #c9a962, #f0d78c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 리셋 버튼 스타일 */
+.scratch-demo__reset-btn {
+    display: block;
+    margin: 0.75rem auto 0;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #c9a962, #b8963e);
+    color: #1a1a2e;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scratch-demo__reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(201, 169, 98, 0.4);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .interactive-section {
+        padding: 3rem 1rem;
+    }
+
+    .interactive-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
