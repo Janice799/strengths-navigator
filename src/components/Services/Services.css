@@ -1,0 +1,156 @@
+/* =============================================
+   SERVICES SECTION - Premium Dark Theme
+   ============================================= */
+
+.services {
+    background: var(--primary);
+    position: relative;
+}
+
+.section-header {
+    margin-bottom: var(--space-3xl);
+}
+
+.section-header .divider {
+    margin: var(--space-lg) auto;
+}
+
+.section-subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.0625rem;
+    margin-top: var(--space-sm);
+}
+
+/* Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+/* Card */
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: var(--space-2xl);
+    background: var(--surface);
+    border: 1px solid var(--surface-light);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.service-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-gold);
+}
+
+.service-card.highlighted {
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(201, 169, 98, 0.08) 100%);
+    border-color: var(--accent);
+}
+
+.service-card.highlighted::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.popular-badge {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: var(--primary);
+    background: var(--gradient-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-full);
+}
+
+.service-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: var(--space-lg);
+}
+
+.service-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.service-description {
+    font-size: 0.9375rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-xl);
+    flex-grow: 1;
+    line-height: 1.8;
+}
+
+/* Features */
+.service-features {
+    list-style: none;
+    margin-bottom: var(--space-xl);
+}
+
+.service-features li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--surface-light);
+}
+
+.service-features li:last-child {
+    border-bottom: none;
+}
+
+.feature-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Button */
+.service-btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+.service-card.highlighted .service-btn {
+    background: var(--gradient-gold);
+    border-color: transparent;
+    color: var(--primary);
+}
+
+.service-card.highlighted .service-btn:hover {
+    box-shadow: var(--shadow-gold);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}

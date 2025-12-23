@@ -1,0 +1,180 @@
+/* =============================================
+   STRENGTHS SHOWCASE SECTION - Premium
+   ============================================= */
+
+.strengths-showcase {
+    background: var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.strengths-showcase::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(201, 169, 98, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.strengths-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-2xl);
+}
+
+.strengths-header h2 {
+    margin-bottom: var(--space-sm);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.strengths-subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9375rem;
+}
+
+/* Strengths Grid */
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-md);
+}
+
+/* Strength Card */
+.strength-card {
+    position: relative;
+    padding: var(--space-lg) var(--space-md);
+    background: var(--surface);
+    border: 1px solid var(--surface-light);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: all var(--transition-base);
+    overflow: hidden;
+}
+
+.strength-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.strength-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-gold);
+}
+
+.strength-card:hover::before {
+    opacity: 1;
+}
+
+.strength-card.featured {
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(201, 169, 98, 0.1) 100%);
+    border-color: var(--accent);
+}
+
+.strength-card.featured::before {
+    opacity: 1;
+}
+
+/* Card Content */
+.strength-rank-badge {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    width: 22px;
+    height: 22px;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.strength-icon {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+
+.strength-card h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.strength-korean {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-sm);
+}
+
+.strength-domain {
+    display: inline-flex;
+    padding: 2px var(--space-xs);
+    font-size: 0.5625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-sm);
+    border: 1px solid;
+}
+
+.strength-domain.executing {
+    border-color: var(--executing-color);
+    color: var(--executing-color);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.strength-domain.influencing {
+    border-color: var(--influencing-color);
+    color: var(--influencing-color);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.strength-domain.relationship {
+    border-color: var(--relationship-color);
+    color: var(--relationship-color);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.strength-domain.strategic {
+    border-color: var(--strategic-color);
+    color: var(--strategic-color);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+    .strengths-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .strengths-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .strengths-grid {
+        grid-template-columns: 1fr;
+    }
+}
