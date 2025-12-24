@@ -3,6 +3,8 @@ import { useAuth } from '../../context/AuthContext';
 import StrengthDNA from '../StrengthDNA/StrengthDNA';
 import { strengthsData } from '../../data/strengthsData';
 import './Hero.css';
+import { useState } from 'react';
+import AuthModal from '../AuthModal/AuthModal';
 
 // Hero Component - 코치 프로필 중심 (강점 DNA 시각화)
 const Hero = ({ coach }) => {
@@ -27,6 +29,8 @@ const Hero = ({ coach }) => {
 
     const dominantDomain = getDominantDomain();
 
+    const [isAuthModalOpen, setAuthModalOpen] = useState(false);
+
     return (
         <section className="hero">
             {/* 상단 로그인/로그아웃 네비게이션 */}
@@ -34,18 +38,15 @@ const Hero = ({ coach }) => {
                 {user ? (
                     <div className="nav-user">
                         <span className="user-greeting">안녕하세요, {user.name}님</span>
-                        <button onClick={logout} className="nav-btn logout-btn">
-                            로그아웃
-                        </button>
+                        <button onClick={logout} className="nav-btn logout-btn">로그아웃</button>
                     </div>
                 ) : (
                     <div className="nav-auth">
-                        <Link to="/login" className="nav-btn login-btn">로그인</Link>
-                        <Link to="/signup" className="nav-btn signup-btn">회원가입</Link>
+                        <button onClick={() => setAuthModalOpen(true)} className="nav-btn login-btn">로그인/회원가입</button>
                     </div>
                 )}
             </nav>
-
+            <AuthModal isOpen={isAuthModalOpen} onClose={() => setAuthModalOpen(false)} />
             {/* 강점 DNA 시각화 배경 */}
             <StrengthDNA
                 topStrengths={topStrengths}
@@ -115,7 +116,7 @@ const Hero = ({ coach }) => {
                 <span>Scroll</span>
                 <div className="scroll-line"></div>
             </div>
-        </section>
+        </section >
     );
 };
 

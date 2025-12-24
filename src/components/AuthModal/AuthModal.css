@@ -1,0 +1,52 @@
+/* AuthModal overlay and dialog styling */
+.auth-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.auth-modal {
+    background: var(--surface);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-gold);
+    max-width: 400px;
+    width: 90%;
+    position: relative;
+}
+
+.auth-modal-close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.auth-modal-tabs {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.auth-modal-tabs button {
+    background: transparent;
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.auth-modal-tabs button.active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+}
