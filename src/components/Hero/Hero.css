@@ -15,6 +15,73 @@
     padding: var(--space-xl);
 }
 
+/* ===== 상단 네비게이션 ===== */
+.hero-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-md) var(--space-xl);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 10;
+}
+
+.nav-auth,
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.user-greeting {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-right: var(--space-sm);
+}
+
+.nav-btn {
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    border: none;
+}
+
+.login-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--surface-light);
+}
+
+.login-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--accent);
+}
+
+.signup-btn {
+    background: var(--gradient-gold);
+    color: var(--primary);
+}
+
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+.logout-btn {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
 /* 배경 효과 */
 .hero-bg-glow {
     position: absolute;

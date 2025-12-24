@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import StrengthDNA from '../StrengthDNA/StrengthDNA';
 import { strengthsData } from '../../data/strengthsData';
 import './Hero.css';
 
 // Hero Component - 코치 프로필 중심 (강점 DNA 시각화)
 const Hero = ({ coach }) => {
+    const { user, logout } = useAuth();
     const { topStrengths } = coach;
 
     // 우세 도메인 결정
@@ -26,6 +29,23 @@ const Hero = ({ coach }) => {
 
     return (
         <section className="hero">
+            {/* 상단 로그인/로그아웃 네비게이션 */}
+            <nav className="hero-nav">
+                {user ? (
+                    <div className="nav-user">
+                        <span className="user-greeting">안녕하세요, {user.name}님</span>
+                        <button onClick={logout} className="nav-btn logout-btn">
+                            로그아웃
+                        </button>
+                    </div>
+                ) : (
+                    <div className="nav-auth">
+                        <Link to="/login" className="nav-btn login-btn">로그인</Link>
+                        <Link to="/signup" className="nav-btn signup-btn">회원가입</Link>
+                    </div>
+                )}
+            </nav>
+
             {/* 강점 DNA 시각화 배경 */}
             <StrengthDNA
                 topStrengths={topStrengths}
