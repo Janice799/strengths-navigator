@@ -53,19 +53,28 @@
 }
 
 .login-btn {
-    background: transparent;
-    color: var(--text-secondary);
-    border: 1px solid var(--surface-light);
+    background: var(--gradient-gold);
+    color: var(--primary);
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
 }
 
 .login-btn:hover {
-    color: var(--text-primary);
-    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
 }
 
 .signup-btn {
     background: var(--gradient-gold);
     color: var(--primary);
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
 }
 
 .signup-btn:hover {
